@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tables.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+</style>
+
+</head>
+<body>
+<p><a href="../index.html">Index</a> / <a href="./index.html">Frondend</a></p>
+<h1 id="tables">Tables</h1>
+<p>We use a custom table component written specifically for this project. Not only is it able to display data, it also supports keyword filtering, and date range filtering. Anytime you need a table, this widget will do pretty much everything for you</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Clickable Rows
+<ul>
+<li>Enable/Disable (default: disabled)</li>
+</ul>
+</li>
+<li>Filter Data
+<ul>
+<li>Keywords</li>
+<li>Date Range</li>
+</ul>
+</li>
+<li>Pagination
+<ul>
+<li>Enable/Disable</li>
+<li>Rows Per Page</li>
+</ul>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>The basic usage for the table is like so</p>
+<pre class="hljs"><code><div>@table($options)
+</div></code></pre>
+<p>There are a couple required options that you will need to give it: <code>name</code>, and <code>columns</code>.</p>
+<pre class="hljs"><code><div>@table([
+    <span class="hljs-string">"name"</span>    =&gt; <span class="hljs-string">"my_table"</span>,
+    <span class="hljs-string">"columns"</span> =&gt; [
+        <span class="hljs-string">"first_name"</span>,
+        <span class="hljs-string">"last_name"</span>,
+        <span class="hljs-string">"email"</span>
+    ]
+])
+</div></code></pre>
+<p>You will notice that, when you view this table, the columns will display:</p>
+<pre class="hljs"><code><div>my_table.first_name | my_table.last_name | my_table.email
+</div></code></pre>
+<p>To fix this, you will need to give your columns a nice, readable name in the <code>tables.php</code> locale file located in <code>resources/lang/en/tables.php</code></p>
+<pre class="hljs"><code><div><span class="hljs-string">"my_table"</span> =&gt; [
+    <span class="hljs-string">"first_name"</span> =&gt; <span class="hljs-string">"First Name"</span>,
+    <span class="hljs-string">"last_name"</span>  =&gt; <span class="hljs-string">"Last Name"</span>,
+    <span class="hljs-string">"email"</span>      =&gt; <span class="hljs-string">"Email"</span>
+]
+</div></code></pre>
+<p>And magically, your table names will now render as:</p>
+<pre class="hljs"><code><div>First Name | Last Name | Email
+</div></code></pre>
+<h3 id="options">Options</h3>
+<p>In order for this table to be usable, we'll need to set some options</p>
+<h4 id="columns-and-data">Columns and Data</h4>
+<p>The names that are passed in the <code>columns</code> option are the keys to the JSON data that you give to the table to display. Example below:</p>
+<pre class="hljs"><code><div>@table([
+    <span class="hljs-string">"name"</span>    =&gt; <span class="hljs-string">"my_table"</span>,
+    <span class="hljs-string">"columns"</span> =&gt; [<span class="hljs-string">"name"</span>, <span class="hljs-string">"email"</span>],
+    <span class="hljs-string">"data"</span>    =&gt; [
+        [
+            <span class="hljs-string">"id"</span>    =&gt; <span class="hljs-number">17</span>,
+            <span class="hljs-string">"name"</span>  =&gt; <span class="hljs-string">"John Smith"</span>,
+            <span class="hljs-string">"email"</span> =&gt; <span class="hljs-string">"email@example.com"</span>
+        ],
+        [
+            <span class="hljs-string">"id"</span>    =&gt; <span class="hljs-number">97</span>,
+            <span class="hljs-string">"name"</span>  =&gt; <span class="hljs-string">"Chris Hanson"</span>,
+            <span class="hljs-string">"email"</span> =&gt; <span class="hljs-string">"chris@hanson.com"</span>
+        ]
+    ]
+])
+</div></code></pre>
+<p>Because you specified that you want <code>name</code>, and <code>email</code> from the given data, only those fields of information will be displayed. The <code>id</code> field will still be in the data, but it won't be displayed.</p>
+<p>You can also change the data dynamically using Javascript</p>
+<pre class="hljs"><code><div>    table(<span class="hljs-string">"table_name"</span>).setData(dataObject);
+</div></code></pre>
+<h4 id="clickable-rows">Clickable Rows</h4>
+<p>By default, the rows are not clickable. You can make them clickable by setting the <code>clickable</code> option to <code>true</code></p>
+<pre class="hljs"><code><div>@table([
+    ...
+    <span class="hljs-string">"clickable"</span> =&gt; <span class="hljs-keyword">true</span>
+])
+</div></code></pre>
+<p>You can now respond to these click events on the frontend. For example:</p>
+<pre class="hljs"><code><div>@section("script)
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        table(<span class="hljs-string">"table_name"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
+            <span class="hljs-comment">// This will print the data for the given row</span>
+            <span class="hljs-built_in">console</span>.log(rowData);
+        })
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+@endsection
+</div></code></pre>
+<h4 id="pagination">Pagination</h4>
+<p>By default, pagination is enabled, displaying 15 rows per page. You can change the number of rows per page, set the current page, or disable pagination completely.</p>
+<pre class="hljs"><code><div>@table([
+    <span class="hljs-string">"pagination"</span> =&gt; <span class="hljs-keyword">true</span>,
+    <span class="hljs-string">"perPage"</span>    =&gt; <span class="hljs-number">15</span>,
+    <span class="hljs-string">"page"</span>       =&gt; <span class="hljs-number">0</span> <span class="hljs-comment">// Page is 0 indexed</span>
+])
+</div></code></pre>
+<p>You can also change the current page using Javascript:</p>
+<pre class="hljs"><code><div>table(<span class="hljs-string">"my_table"</span>).setPage(<span class="hljs-number">0</span>);
+</div></code></pre>
+<h4 id="filter-data">Filter Data</h4>
+<p>You can filter the data that gets displayed in the table.</p>
+<h5 id="filter-by-keywords">Filter by Keywords</h5>
+<p>First, specify the columns that you want to search for the given keywords: <code>&quot;keywordIndices&quot; =&gt; [...data column names]</code></p>
+<p>Here is an example making use of this:</p>
+<pre class="hljs"><code><div>@section("body")
+    @table([
+        ...
+        "keywordIndices" =&gt; ["name", "email"]
+    ])
+@endsection
+@section("script")
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            table(<span class="hljs-string">"table_name"</span>).setKeywordFilter(<span class="hljs-string">"John Smith email@example.com"</span>);
+        });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+@endsection
+</div></code></pre>
+<h5 id="filter-by-date">Filter by Date</h5>
+<p>To allow filtering by date, you need to tell the table which column stores the date. To do this, you will set the option <code>&quot;dateIndex&quot; =&gt; &quot;column_name&quot;</code></p>
+<p>Now to apply a date filter...</p>
+<pre class="hljs"><code><div>@section("body")
+    @table([
+        ...
+        "dateIndex" =&gt; ["date"]
+    ])
+@endsection
+@section("script")
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">var</span> startDate = <span class="hljs-string">"1988-01-01"</span>; <span class="hljs-comment">// Y-m-d</span>
+            <span class="hljs-keyword">var</span> endDate = <span class="hljs-string">"2018-01-01"</span>; <span class="hljs-comment">// Y-m-d</span>
+            table(<span class="hljs-string">"table_name"</span>).setDateFilter(startDate, endDate);
+        });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+@endsection
+</div></code></pre>
+
+</body>
+</html>

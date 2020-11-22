@@ -1,0 +1,76 @@
+/**
+ * General styling across all pages
+ */
+
+body > .container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bg-navy {
+    background: $renova-navy;
+}
+
+.bg-image {
+    background: $renova-navy url('../img/family_bg.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.hidden {
+    display: none;
+}
+
+.page-heading {
+    padding: 15px 0px;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.container-thin {
+    max-width: 500px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.no-scroll-container {
+    position: relative;
+    flex-grow: 1;
+}
+
+.form-group {
+    position: relative;
+}
+
+.invalid-feedback.visible {
+    display: block;
+}
+
+.input-icon {
+    position: absolute;
+    bottom: 11px;
+    left: 28px;
+}
+
+.input-icon + .form-control {
+    padding-left: 32px;
+}
+
+.input-group.is-invalid + .invalid-feedback {
+    display: block !important;
+}
+
+.dynamic-form .input-group {
+    margin-bottom: 0 !important;
+}
+
+.btn-group-fill > button {
+    flex-grow: 1;
+}

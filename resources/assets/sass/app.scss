@@ -1,0 +1,48 @@
+/**
+ * Put it all together
+ */
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600");
+@import "~material-icons/iconfont/material-icons.scss";
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Font Awesome
+@import "~font-awesome/scss/font-awesome.scss";
+
+// General Styling
+@import "content";
+
+// Animations
+@import "~animate.css/animate.min.css";
+@import "utility/animations";
+
+// Slider
+@import "utility/css_slider";
+
+// Components
+@import "~bootstrap-select-v4/sass/bootstrap-select";
+@import "component/alert";
+@import "component/loading";
+@import "component/navbar";
+@import "component/select";
+@import "component/tables";
+@import "component/tabs";
+@import "component/tcm";
+@import "component/sidebar";
+@import "component/datatable";
+@import "component/buttons-dataTables";
+
+// Page content
+@import "page/home";
+@import "page/login";
+@import "page/registration";
+@import "page/questionnaire";
+@import "page/questionnaire-printing";
+@import "page/dashboard";
+@import "page/Reports";

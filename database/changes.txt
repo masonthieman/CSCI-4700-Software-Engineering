@@ -1,0 +1,86 @@
+Patients:
+	Rename:
+		primary_phone   -> phone_primary
+		secondary_phone -> phone_secondary
+
+		primary_insurance         -> insurance_primary
+		primary_insurance_idnum   -> insurance_primary_idnum
+		secondary_insurance       -> insurance_secondary
+		secondary_insurance_idnum -> insurance_secondary_idnum
+
+		occupation_desc -> occupation_description
+
+QuestionnaireBillings:
+	Dropped:
+		e_signature -- We have a reference to the employee, so there's no need for this
+		date        -- This is actually replaced with laravel's timestamps
+		dob
+
+QuestionnaireDepressionMedications
+	Rename:
+		medication_used_or_taking -> medication
+
+QuestionnaireForm
+	Rename:
+		occupation_desc -> occupation_description
+
+QuestionnaireMedicationLists
+	Rename:
+		name_of_drug -> name
+		frequency_taken -> frequency
+
+QuestionnaireProviders:
+	Rename:
+		lastov -> last_office_visit
+
+QuestionnaireReferralToPrograms -> QuestionnaireReferrals
+	Rename:
+		referral_program -> referral
+
+QuestionnaireRevisions:
+	Replace:
+		renova_id -> employee_id -- This should be a primary key to the owner of the Renova ID
+
+QuestionnaireRiskFactors:
+	Rename:
+		conditions_identified -> risk_factor
+
+QuestionnaireRoutineScreens -> QuestionnaireRoutineScreenings
+
+Summaries
+	Rename:
+		primary_phone   -> phone_primary
+		secondary_phone -> phone_secondary
+
+		primary_insurance         -> insurance_primary
+		primary_insurance_idnum   -> insurance_primary_idnum
+		secondary_insurance       -> insurance_secondary
+		secondary_insurance_idnum -> insurance_secondary_idnum
+
+		occupation_desc -> occupation_description
+
+	Drop:
+		date - Laravel's timestamps will be used instead.
+		dob - This will never change, so it's redundant to store.
+
+SummaryMedicationLists:
+	Rename:
+		name_of_drug -> name
+		frequency_taken -> frequency
+
+SummaryCarePlans:
+	Order Change:
+		care_plan_template_id and summary_id have been swapped
+
+SummaryConditions:
+	Rename:
+		icd10_number -> icd10
+		cond_description -> description
+
+SummaryReferrals
+	Rename:
+		referrals -> referral
+
+SummaryRecommendations
+	Rename:
+		recommendations -> recommendation

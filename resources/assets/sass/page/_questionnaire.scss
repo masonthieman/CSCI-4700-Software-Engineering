@@ -1,0 +1,39 @@
+.page {
+    display: none;
+    
+}
+
+.active {
+    display: block !important;
+}
+
+// .dynamic-form div:not(:first-child) label{
+//     display: none;
+// }
+
+.hash-div {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+}
+
+.iccm-container {
+    padding-bottom: 1rem;
+}
+
+.cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+    border-radius: 50%;
+    margin-left: 0.04em;
+}
+
+.capitalize {
+    text-transform: capitalize; 
+}

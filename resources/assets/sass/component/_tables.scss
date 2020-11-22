@@ -1,0 +1,17 @@
+.table-cursor-pointer tbody > tr {
+    cursor: pointer;
+}
+
+.check-table-select {
+    display: none;
+}
+
+.check-table-select:checked + tr {
+    color: white !important;
+    background: $renova-navy !important;
+}
+
+.table thead th{
+	background:#2cb8ea;
+	color:#fff;
+}

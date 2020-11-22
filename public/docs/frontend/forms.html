@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>forms.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+</style>
+
+</head>
+<body>
+<p><a href="../index.html">Index</a> / <a href="./index.html">Frontend</a></p>
+<h1 id="forms">Forms</h1>
+<p>We use a fancy library created by <a href="%22https://github.com/SirDavidLudwig%22">David Ludwig</a> to handle all of the form functionality. This library can fully automate Ajax forms and error reporting, as well as give you the ability to create dynamic form entries in cases where a variable number of entries is required.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#ajax-automation">Ajax Automation</a></li>
+<li><a href="#dynamic-form-elements">Dynamic Form Elements</a></li>
+<li><a href="#field-population">Field Population</a></li>
+</ul>
+<h2 id="ajax-automation">Ajax Automation</h2>
+<p>The forms on the project should be using Ajax. To do this, we'll use the Ajax form utility which fully automates Ajax form submission, and error reporting.</p>
+<p>Here is a simple example:</p>
+<pre class="hljs"><code><div>@section("body")
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"my_form"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+@endsection
+@section("script")
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-comment">// Run when page is ready</span>
+        $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            form.ajaxForm(<span class="hljs-string">"my_form"</span>);
+        });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+@endsection
+</div></code></pre>
+<p>Simply by executing the line <code>form.ajaxForm(&quot;my_form&quot;)</code>, the form is now completely setup for ajax submission, and error reporting. Isn't that magical?</p>
+<h3 id="ajax-form-utility">Ajax Form Utility</h3>
+<p>As you saw in the example above, ajax forms are created simply by calling <code>form.ajaxForm(&quot;[form_name]&quot;)</code>. Below is the complete documentation to the Ajax form utility</p>
+<h4 id="declare-ajax-form">Declare Ajax Form</h4>
+<pre class="hljs"><code><div>form.ajaxForm(
+    <span class="hljs-string">"[form_name]"</span>
+    [, onResult(form, fields, response) <span class="hljs-comment">// Invoked when a form has been submitted and a response has beet retrieved</span>
+    [, onSubmit(formName) <span class="hljs-comment">// Invoked just before a form has been submitted</span>
+    [, onErrors(form, fields, response) <span class="hljs-comment">// Invoked if errors occurred after submission</span>
+]]]);
+</div></code></pre>
+<p>If you pass a function to the <code>onSubmit</code> parameter, and that functions returns <code>false</code>, submission will be canceled.</p>
+<p>If you pass a function to the <code>onErrors</code> parameter, and that function returns <code>false</code>, normal error reporting will be canceled.</p>
+<h2 id="dynamic-form-elements">Dynamic Form Elements</h2>
+<p>On some forms, they will require you to be able to have a variable amount of entries. This is where the dynamic form utility comes in.</p>
+<p>To achieve this, we will define a single entry element under a templates section of the web page. We will then create a &quot;dynamic area&quot; to add those template entries to. Here is a working example:</p>
+<pre class="hljs"><code><div>@section("body")
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+        @header("Email List")
+        @dynamicarea("emails", "email-entry", "Email")
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+@endsection
+@section("dynamic_templates")
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-dynamic-template-id</span>=<span class="hljs-string">"email-entry"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row dynamic-form"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group col-md-12"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> &gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input-group mb-1"</span>&gt;</span>
+                @text("email", ["data-feedback" =&gt; "email-feedback"])
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input-group-append"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-outline-primary"</span> <span class="hljs-attr">data-dynamic-action</span>=<span class="hljs-string">"remove"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-feedback-area</span>=<span class="hljs-string">"email-feedback"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"invalid-feedback visible"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+@endsection
+</div></code></pre>
+<p>This will create an area with a button labeled &quot;Add Email&quot; which will insert one of the specified dynamic templates. You will notice inside the template, a button that has the attribute <code>data-dynamic-action=&quot;remove&quot;</code>. This is attribute is responsible for this specific entry to be removed.</p>
+<h2 id="field-population">Field Population</h2>
+<p>Sometimes you will like to populate the fields of a form. It can be that you saved, and would like to come back, or to autofill known information.</p>
+<p>This system works by using a very specific JSON object configuration:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> data = {
+    <span class="hljs-comment">// Static field names:</span>
+    <span class="hljs-string">"static"</span>: {
+        <span class="hljs-string">`field_name`</span>: <span class="hljs-string">`field_value`</span>
+        <span class="hljs-string">"my_field"</span>: <span class="hljs-string">"This value was autopopulated"</span>
+    },
+
+    <span class="hljs-comment">// Dynamic fields: This one is more complicated</span>
+    <span class="hljs-comment">// since it's designed to work with dynamic entries</span>
+    <span class="hljs-string">"dynamic"</span>: {
+        <span class="hljs-string">"dynamicarea-name"</span>: [
+            {
+                <span class="hljs-string">"template_field_name"</span>: <span class="hljs-string">"Value"</span>
+            }
+        ]
+    }
+}
+</div></code></pre>
+<p>You can then invoke the form population function:</p>
+<pre class="hljs"><code><div>form.dynamicFormPopulate(formName, data);
+</div></code></pre>
+<p>Congratulations, your form is now populated with data!</p>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.printing-col {
+    display: flex;
+}
+
+.printing-span {
+    display: inline-block;
+    border-bottom: 2px solid black;
+    flex-grow: 1;
+    height: 22px;
+}
+
+label {
+    padding-right: 5px;
+}
+
+h3 {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+
+h4 {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+@media print {
+    .pagebrk {
+        page-break-after: always;
+    }
+}

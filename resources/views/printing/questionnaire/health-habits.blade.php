@@ -1,0 +1,7 @@
+@include("form.exercise")
+@include("form.diet")
+@include("form.sleep")
+@include("form.caffeine")
+@include("form.alcohol")
+@include("form.tobacco")
+@include("form.drugs")

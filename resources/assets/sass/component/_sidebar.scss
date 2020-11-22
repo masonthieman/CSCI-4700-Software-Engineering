@@ -1,0 +1,153 @@
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #2cb8ea; /* Black #182b4a*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 33px; /* Place content 60px from the top */
+ 
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  margin-top:62px;
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 18px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.sidebar .nav>li.has-sub{
+	width:100%;
+}
+.sidebar .nav>li>a i.material-icons {
+    float: left;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin: -2px 10px -2px 0;
+    font-size: 24px;
+    line-height: 24px;
+}
+.sidebar .nav>li>a i {
+    float: left;
+    margin-right: 10px;
+    width: 24px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+.sidebar .nav>li>a .caret {
+    float: right;
+    margin-top: 9px;
+}
+.sidebar li .caret {
+    border-width: 5px;
+    margin-top: 8px;
+    float: right;
+    line-height: 20px;
+    text-align: center;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+}
+.pull-right {
+    float: right!important;
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+b, strong {
+    font-weight: 700;
+}
+ul.sub-menu {
+    margin-left: 0px;
+    padding-left: 12px;
+}
+.sidebar .sub-menu {
+    list-style-type: none;
+    padding: 10px 0 10px 30px;
+    margin: 0;
+    background: #fff; /* #1a2229;*/
+    position: relative;
+    
+}
+.sidebar .nav>li.has-sub .sub-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+	position: absolute;
+    top: 4px;
+    /* right: 4px; */
+    font-size: 18px;
+    margin-left: 18px;
+    color: #182b4a;
+	cursor:pointer;
+}
+
+/* The button used to open the sidebar */
+button.openbtn:focus {
+    outline:none !important;
+}
+.openbtn {
+  font-size: 14px;
+    cursor: pointer;
+    background-color: #2cb8ea;
+    color: white;
+    padding: 6px 15px;
+    border: none;
+    margin-top: 0px;
+    border-radius: 18px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+.sub-menu li a {
+    color: #999;
+}
+.sub-menu li a:hover {
+    color: #182b4a;
+}
+
+.closebtn i.material-icons{
+	color:#fff;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.sidebar {
+	 padding-bottom: 70px; 
+}

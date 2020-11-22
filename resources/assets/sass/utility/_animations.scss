@@ -1,0 +1,11 @@
+/**
+ * These are some extra timings for the Animate.css library
+ */
+
+.animated-fast {
+    animation-duration: $anim-fast-duration;
+}
+
+.animated-slow {
+    animation-duration: $anim-slow-duration;
+}

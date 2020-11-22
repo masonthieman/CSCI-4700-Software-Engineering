@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" = "prod" ]; then
+				cp .env.production .env
+elif [ "$1" = "dev" ]; then
+				cp .env.development .env
+elif [ "$1" = "test" ]; then
+				cp .env.testing .env
+else
+				echo "Usage: ./env <prod|dev|test>"
+fi

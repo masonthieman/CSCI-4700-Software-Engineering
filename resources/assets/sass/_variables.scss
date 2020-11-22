@@ -1,0 +1,25 @@
+/**
+ * Variables used throughout the application
+ */
+// Body
+$body-bg: rgb(240, 248, 255);
+
+// Typography
+$font-family-sans-serif: "Roboto", sans-serif;
+$fa-font-path: "~font-awesome/fonts";
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$renova-green: rgb(146, 212, 0);
+$renova-navy: rgb(24, 43, 74);
+$renova-lightblue: rgb(217, 237, 247);
+
+// Bootstrap overrides
+$blue: $renova-navy;
+$secondary: $renova-green;
+// $success: $renova-green;
+
+// Animation settings
+$anim-fast-duration: 0.8s;
+$anim-slow-duration: 1.5s;

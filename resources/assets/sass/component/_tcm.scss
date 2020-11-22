@@ -1,0 +1,12 @@
+.show-section {
+  display: none;
+}
+
+.show-field {
+  float: left;
+  &:checked {
+    & + .show-section {
+      display: block;
+    }
+  }
+}

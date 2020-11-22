@@ -1,0 +1,29 @@
+.navbar {
+    background-color: $renova-navy;
+}
+
+.navbar .nav-item {
+    text-transform: uppercase;
+}
+
+.navbar .nav-link {
+    transition: color 100ms ease-in-out;
+}
+
+.btn-nav {
+    background: $renova-green;
+    color: $renova-navy !important;
+    outline: none !important;
+}
+
+.btn-nav:hover {
+    color: white !important;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "xl")) {
+    .btn-nav {
+        font-size: 0.75em;
+        margin: 7px 8px;
+        padding: 3px 8px;
+    }
+}
